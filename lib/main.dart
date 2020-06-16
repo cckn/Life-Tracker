@@ -13,35 +13,48 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: mainColor,
       ),
-      home: Scaffold(
-        body: SafeArea(
-          child: Row(
-//            mainAxisAlignment: MainAxisAlignment.spaceAround,
-            crossAxisAlignment: CrossAxisAlignment.stretch,
-            children: <Widget>[
-              Container(
-                width: 100,
-                height: 100,
-                color: Colors.blue,
-                child: Text("Container 1"),
-              ),
-              SizedBox(
-                width: 30,
-              ),
-              Container(
-                width: 100,
-                height: 100,
-                color: Colors.cyan,
-                child: Text("Container 2"),
-              ),
-              Container(
-                width: 100,
-                height: 100,
-                color: Colors.grey,
-                child: Text("Container 3"),
-              )
-            ],
-          ),
+      home: FirstPage(),
+    );
+  }
+}
+
+class FirstPage extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("First Page"),
+      ),
+      body: Center(
+        child: RaisedButton(
+          child: Text("Go to the Second page"),
+          onPressed: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) {
+                return SecondPage();
+              }),
+            );
+          },
+        ),
+      ),
+    );
+  }
+}
+
+class SecondPage extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("Second Page"),
+      ),
+      body: Center(
+        child: RaisedButton(
+          child: Text("Back to the First page"),
+          onPressed: () {
+            Navigator.pop(context);
+          },
         ),
       ),
     );
