@@ -45,11 +45,18 @@ class MyHomePage extends StatelessWidget {
               accountName: Text("data"),
               accountEmail: Text("cckn.dev@gmail.com"),
               currentAccountPicture: CircleAvatar(
-                  backgroundImage: AssetImage("images/sample-user1.jpg")
-//                Image.asset( "images/sample.png"),
-                  ),
+                backgroundImage: AssetImage("images/sample-user1.jpg"),
+              ),
+              otherAccountsPictures: <Widget>[
+                CircleAvatar(
+                  backgroundImage: AssetImage("images/sample-user (2).jpg"),
+                ),
+                CircleAvatar(
+                  backgroundImage: AssetImage("images/sample-user (3).jpg"),
+                ),
+              ],
               onDetailsPressed: () {
-                print("onDetail Button Pressed");
+                print("onDetail Button Pcressed");
               },
               decoration: BoxDecoration(
                   color: Colors.redAccent,
@@ -57,10 +64,38 @@ class MyHomePage extends StatelessWidget {
                       BorderRadius.vertical(bottom: Radius.circular(10))),
             ),
             ListTile(
-              leading: Icon(Icons.add),
+              leading: Icon(
+                Icons.home,
+                color: Colors.grey[850],
+              ),
               title: Text("data"),
-              subtitle: Text("data"),
+              trailing: Icon(Icons.add),
+              onTap: () {
+                print("Home Button Tapped!");
+              },
             ),
+            ListTile(
+              leading: Icon(
+                Icons.settings,
+                color: Colors.grey[850],
+              ),
+              title: Text("Setting"),
+              trailing: Icon(Icons.add),
+              onTap: () {
+                print("Setting Button Tapped!");
+              },
+            ),
+            ListTile(
+              leading: Icon(
+                Icons.question_answer,
+                color: Colors.grey[850],
+              ),
+              title: Text("QnA"),
+              trailing: Icon(Icons.add),
+              onTap: () {
+                print("QnA Button Tapped!");
+              },
+            )
           ],
         ),
       ),
