@@ -24,81 +24,26 @@ class MyHomePage extends StatelessWidget {
         title: Text("AppBar Icon Menu"),
         elevation: 0,
         centerTitle: true,
-        actions: <Widget>[
-          IconButton(
-              icon: Icon(Icons.shopping_cart),
-              onPressed: () {
-                print("shopping cart button is clicked");
-              }),
-          IconButton(
-              icon: Icon(Icons.search),
-              onPressed: () {
-                print("search button is clicked");
-              }),
-        ],
       ),
-      drawer: Drawer(
-        child: ListView(
-          padding: EdgeInsets.zero,
-          children: <Widget>[
-            UserAccountsDrawerHeader(
-              accountName: Text("data"),
-              accountEmail: Text("cckn.dev@gmail.com"),
-              currentAccountPicture: CircleAvatar(
-                backgroundImage: AssetImage("images/sample-user1.jpg"),
+      body: Builder(builder: (BuildContext context) {
+        return Center(
+          child: FlatButton(
+            color: Colors.red,
+            child: Text(
+              "Show me",
+              style: TextStyle(
+                color: Colors.white,
               ),
-              otherAccountsPictures: <Widget>[
-                CircleAvatar(
-                  backgroundImage: AssetImage("images/sample-user (2).jpg"),
-                ),
-                CircleAvatar(
-                  backgroundImage: AssetImage("images/sample-user (3).jpg"),
-                ),
-              ],
-              onDetailsPressed: () {
-                print("onDetail Button Pcressed");
-              },
-              decoration: BoxDecoration(
-                  color: Colors.redAccent,
-                  borderRadius:
-                      BorderRadius.vertical(bottom: Radius.circular(10))),
             ),
-            ListTile(
-              leading: Icon(
-                Icons.home,
-                color: Colors.grey[850],
-              ),
-              title: Text("data"),
-              trailing: Icon(Icons.add),
-              onTap: () {
-                print("Home Button Tapped!");
-              },
-            ),
-            ListTile(
-              leading: Icon(
-                Icons.settings,
-                color: Colors.grey[850],
-              ),
-              title: Text("Setting"),
-              trailing: Icon(Icons.add),
-              onTap: () {
-                print("Setting Button Tapped!");
-              },
-            ),
-            ListTile(
-              leading: Icon(
-                Icons.question_answer,
-                color: Colors.grey[850],
-              ),
-              title: Text("QnA"),
-              trailing: Icon(Icons.add),
-              onTap: () {
-                print("QnA Button Tapped!");
-              },
-            )
-          ],
-        ),
-      ),
+            onPressed: () {
+              Scaffold.of(context).showSnackBar(SnackBar(
+                content: Text('Hello SnackBar'),
+//                duration: Duration(milliseconds: 20),
+              ));
+            },
+          ),
+        );
+      }),
     );
   }
 }
