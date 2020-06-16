@@ -24,11 +24,6 @@ class MyHomePage extends StatelessWidget {
         title: Text("AppBar Icon Menu"),
         elevation: 0,
         centerTitle: true,
-        leading: IconButton(
-            icon: Icon(Icons.menu),
-            onPressed: () {
-              print("menu button is clicked");
-            }),
         actions: <Widget>[
           IconButton(
               icon: Icon(Icons.shopping_cart),
@@ -41,6 +36,33 @@ class MyHomePage extends StatelessWidget {
                 print("search button is clicked");
               }),
         ],
+      ),
+      drawer: Drawer(
+        child: ListView(
+          padding: EdgeInsets.zero,
+          children: <Widget>[
+            UserAccountsDrawerHeader(
+              accountName: Text("data"),
+              accountEmail: Text("cckn.dev@gmail.com"),
+              currentAccountPicture: CircleAvatar(
+                  backgroundImage: AssetImage("images/sample-user1.jpg")
+//                Image.asset( "images/sample.png"),
+                  ),
+              onDetailsPressed: () {
+                print("onDetail Button Pressed");
+              },
+              decoration: BoxDecoration(
+                  color: Colors.redAccent,
+                  borderRadius:
+                      BorderRadius.vertical(bottom: Radius.circular(10))),
+            ),
+            ListTile(
+              leading: Icon(Icons.add),
+              title: Text("data"),
+              subtitle: Text("data"),
+            ),
+          ],
+        ),
       ),
     );
   }
