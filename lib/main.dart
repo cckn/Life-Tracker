@@ -13,49 +13,23 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: mainColor,
       ),
-      home: MyHomePage(),
-    );
-  }
-}
-
-class MyHomePage extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text("AppBar Icon Menu"),
-        elevation: 0,
-        centerTitle: true,
-      ),
-      body: MySnackBar(),
-    );
-  }
-}
-
-class MySnackBar extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Center(
-      child: RaisedButton(
-        onPressed: () {
-          Scaffold.of(context).removeCurrentSnackBar();
-          Scaffold.of(context).showSnackBar(
-            SnackBar(
-              content: Text(
-                "SnackBar",
-                textAlign: TextAlign.center,
-                style: TextStyle(color: Colors.white),
+      home: Scaffold(
+        body: Container(
+          color: Colors.red,
+          child: SafeArea(
+            child: Container(
+              color: Colors.green,
+              width: 100,
+              height: 100,
+              margin: EdgeInsets.symmetric(
+                vertical: 50,
+                horizontal: 10,
               ),
-              backgroundColor: mainColor,
-              duration: Duration(seconds: 1),
+              padding: EdgeInsets.all(50),
+              child: Text("data"),
             ),
-          );
-        },
-        child: Text(
-          "Show me",
-          style: TextStyle(color: Colors.white),
+          ),
         ),
-        color: mainColor,
       ),
     );
   }
