@@ -1,11 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:lifetracker/screens/ScreenA.dart';
-import 'package:lifetracker/screens/ScreenB.dart';
-import 'package:lifetracker/screens/ScreenC.dart';
 
 void main() => runApp(MyApp());
 
-Color mainColor = Colors.blue;
+Color mainColor = Colors.red;
 
 class MyApp extends StatelessWidget {
   @override
@@ -16,12 +13,27 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: mainColor,
       ),
-      initialRoute: "/",
-      routes: {
-        "/": (_) => ScreenA(),
-        "/b": (_) => ScreenB(),
-        "/c": (_) => ScreenC(),
-      },
+      home: Login(),
+    );
+  }
+}
+
+class Login extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        centerTitle: true,
+        title: Text("Log ins"),
+        actions: <Widget>[
+          IconButton(
+            icon: Icon(Icons.search),
+            onPressed: () {},
+          )
+        ],
+      ),
+      drawer: Drawer(),
+      body: Center(),
     );
   }
 }
