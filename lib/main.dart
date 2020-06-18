@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:lifetracker/screens/ScreenA.dart';
+import 'package:lifetracker/screens/ScreenB.dart';
+import 'package:lifetracker/screens/ScreenC.dart';
 
 void main() => runApp(MyApp());
 
@@ -13,50 +16,12 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: mainColor,
       ),
-      home: FirstPage(),
-    );
-  }
-}
-
-class FirstPage extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text("First Page"),
-      ),
-      body: Center(
-        child: RaisedButton(
-          child: Text("Go to the Second page"),
-          onPressed: () {
-            Navigator.push(
-              context,
-              MaterialPageRoute(builder: (context) {
-                return SecondPage();
-              }),
-            );
-          },
-        ),
-      ),
-    );
-  }
-}
-
-class SecondPage extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text("Second Page"),
-      ),
-      body: Center(
-        child: RaisedButton(
-          child: Text("Back to the First page"),
-          onPressed: () {
-            Navigator.pop(context);
-          },
-        ),
-      ),
+      initialRoute: "/",
+      routes: {
+        "/": (_) => ScreenA(),
+        "/b": (_) => ScreenB(),
+        "/c": (_) => ScreenC(),
+      },
     );
   }
 }
