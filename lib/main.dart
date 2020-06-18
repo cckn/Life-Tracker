@@ -29,34 +29,37 @@ class _LoginState extends State<Login> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-//      appBar: AppBar(
-//        centerTitle: true,
-//        title: Text("Log ins"),
-//        actions: <Widget>[
-//          IconButton(
-//            icon: Icon(Icons.search),
-//            onPressed: () {},
-//          )
-//        ],
-//      ),
+      appBar: AppBar(
+        centerTitle: true,
+        title: Text("Log ins"),
+        actions: <Widget>[
+          IconButton(
+            icon: Icon(Icons.search),
+            onPressed: () {},
+          )
+        ],
+      ),
       drawer: Drawer(),
-      body: SingleChildScrollView(
-        child: Column(
-          children: <Widget>[
-            Padding(
-              padding: EdgeInsets.only(
-                top: 50,
+      body: GestureDetector(
+        onTap: () {
+          FocusScope.of(context).unfocus();
+        },
+        child: SingleChildScrollView(
+          child: Column(
+            children: <Widget>[
+              Padding(
+                padding: const EdgeInsets.only(top: 50.0),
+                child: Center(
+                  child: Image(
+                    image: AssetImage('images/chef.gif'),
+                    width: 170,
+                    height: 190,
+                  ),
+                ),
               ),
-            ),
-            Center(
-              child: Image(
-                image: AssetImage('images/chef.gif'),
-                width: 170,
-                height: 190,
-              ),
-            ),
-            LoginForm()
-          ],
+              LoginForm()
+            ],
+          ),
         ),
       ),
     );
