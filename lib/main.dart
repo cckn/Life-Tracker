@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:lifetracker/Screens/Home.dart';
+import 'package:lifetracker/Screens/Home/Home.dart';
 
 void main() => runApp(
       MyApp(),
@@ -13,7 +13,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: "Life Tracker",
-      theme: ThemeData(primarySwatch: mainColor),
+      theme: ThemeData.dark(),
       home: Scaffold(
         appBar: AppBar(
           centerTitle: true,
