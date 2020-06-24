@@ -1,14 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:lifetracker/Data/dummy.dart';
+import 'package:lifetracker/Data/app_state.dart';
 import 'package:lifetracker/Screens/Home/Home.dart';
 import 'package:provider/provider.dart';
-import 'Models/Record.dart';
 
 Color mainColor = Colors.blue;
 
 void main() => runApp(
-      Provider<List<Record>>.value(
-        value: dummy,
+      ChangeNotifierProvider<AppState>(
+        create: (_) => AppState(),
         child: MyApp(),
       ),
     );

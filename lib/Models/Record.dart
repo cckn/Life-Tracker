@@ -1,4 +1,7 @@
+import 'package:uuid/uuid.dart';
+
 class Record {
+  String id = "";
   bool isDone = false;
   String text = "";
   String comment = "";
@@ -9,5 +12,6 @@ class Record {
 
   Record(this.text, this.createdAt) {
     this.time = this.createdAt;
+    this.id = new Uuid().v4();
   }
 }

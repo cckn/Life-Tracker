@@ -14,7 +14,7 @@ String multilineText = """여러줄 텍스트
 여러줄 텍스트
 """;
 
-var dummy = <Record>[
+var initialRecordList = <Record>[
   new Record(shortString, new DateTime.now()),
   new Record(longString, new DateTime.now()),
   new Record(multilineText, new DateTime.now())

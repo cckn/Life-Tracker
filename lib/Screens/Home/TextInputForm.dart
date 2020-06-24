@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:lifetracker/Data/app_state.dart';
+import 'package:provider/provider.dart';
 
 class TextInputForm extends StatefulWidget {
+  final ScrollController scrollController;
+  TextInputForm({this.scrollController});
   @override
   _TextInputFormState createState() => _TextInputFormState();
 }
@@ -16,6 +20,21 @@ class _TextInputFormState extends State<TextInputForm> {
 
   @override
   Widget build(BuildContext context) {
+    AppState appState = Provider.of(context);
+
+    void _onSubmit() {
+      String text = _textController.text;
+      if (text.trim().length != 0) {
+        widget.scrollController.animateTo(
+          widget.scrollController.initialScrollOffset,
+          duration: Duration(seconds: 1),
+          curve: Curves.elasticOut,
+        );
+        appState.addRecord(_textController.text);
+        _textController.text = "";
+      }
+    }
+
     return Padding(
       padding: const EdgeInsets.only(left: 10, right: 10),
       child: Row(
@@ -27,7 +46,7 @@ class _TextInputFormState extends State<TextInputForm> {
           ),
           RaisedButton(
             onPressed: () {
-              print("추가");
+              _onSubmit();
             },
             child: Text("추가"),
           )

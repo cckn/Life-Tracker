@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart' as intl;
+import 'package:lifetracker/Data/app_state.dart';
 import 'package:lifetracker/Models/Record.dart';
+import 'package:provider/provider.dart';
 
 class RecordTile extends StatelessWidget {
   final Record record;
@@ -9,8 +11,15 @@ class RecordTile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    AppState appState = Provider.of(context);
+
+    void _buttonClickHandler() {
+      //print(record.id);
+      appState.deleteRecord(record.id);
+    }
+
     return Padding(
-      padding: const EdgeInsets.only(left: 10),
+      padding: const EdgeInsets.only(left: 10, right: 10),
       child: Column(
         children: <Widget>[
           Row(
@@ -32,9 +41,9 @@ class RecordTile extends StatelessWidget {
               Expanded(
                 flex: 1,
                 child: IconButton(
-                  icon: Icon(Icons.menu),
+                  icon: Icon(Icons.delete),
                   onPressed: () {
-                    print("Icon Button");
+                    _buttonClickHandler();
                   },
                 ),
               )
