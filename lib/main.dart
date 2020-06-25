@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:lifetracker/Data/app_state.dart';
-import 'package:lifetracker/Screens/Home/Home.dart';
+import 'package:lifetracker/data/app_state.dart';
+import 'package:lifetracker/screens/home/home.dart';
 import 'package:provider/provider.dart';
 
 Color mainColor = Colors.blue;
 
 void main() => runApp(
+//    MyApp()
       ChangeNotifierProvider<AppState>(
         create: (_) => AppState(),
         child: MyApp(),

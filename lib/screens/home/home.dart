@@ -1,8 +1,7 @@
-import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:lifetracker/Data/app_state.dart';
-import 'package:lifetracker/Screens/Home/RecordTile.dart';
-import 'package:lifetracker/Screens/Home/TextInputForm.dart';
+import 'package:lifetracker/data/app_state.dart';
+import 'package:lifetracker/screens/home/record_list.dart';
+import 'package:lifetracker/screens/home/text_input_form.dart';
 import 'package:provider/provider.dart';
 
 class Home extends StatefulWidget {
@@ -11,7 +10,7 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
-  var scrollController = ScrollController();
+  ScrollController scrollController = ScrollController();
 
   @override
   void dispose() {
@@ -28,16 +27,8 @@ class _HomeState extends State<Home> {
       children: <Widget>[
         Expanded(
           child: _recordList.length != 0
-              ? ListView(
-                  dragStartBehavior: DragStartBehavior.start,
-                  controller: scrollController,
-                  children: _recordList
-                      .map((record) {
-                        return RecordTile(record: record);
-                      })
-                      .toList()
-                      .reversed
-                      .toList(),
+              ? RecordList(
+                  scrollController: scrollController,
                 )
               : Center(
                   child: Text("데이터가 없어요"),

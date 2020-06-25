@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart' as intl;
-import 'package:lifetracker/Data/app_state.dart';
-import 'package:lifetracker/Models/Record.dart';
+import 'package:lifetracker/data/app_state.dart';
+import 'package:lifetracker/models/record.dart';
 import 'package:provider/provider.dart';
 
 class RecordTile extends StatelessWidget {
@@ -14,7 +14,6 @@ class RecordTile extends StatelessWidget {
     AppState appState = Provider.of(context);
 
     void _buttonClickHandler() {
-      //print(record.id);
       appState.deleteRecord(record.id);
     }
 

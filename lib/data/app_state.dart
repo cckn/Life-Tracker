@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:lifetracker/Data/initial_state.dart';
-import 'package:lifetracker/Models/Record.dart';
+import 'package:lifetracker/data/initial_state.dart';
+import 'package:lifetracker/models/record.dart';
 
 class AppState with ChangeNotifier {
   AppState();
@@ -14,7 +14,8 @@ class AppState with ChangeNotifier {
   }
 
   void addRecord(String text) {
-    _recordList.add(new Record(text, DateTime.now()));
+    _recordList.insert(0, new Record(text, DateTime.now()));
+//    _recordList.add(new Record(text, DateTime.now()));
     notifyListeners();
   }
 
