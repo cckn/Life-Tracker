@@ -12,7 +12,7 @@ class RecordList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     AppState appState = Provider.of<AppState>(context);
-    var _recordList = appState.getRecordList;
+    var _recordList = appState.getRecordList();
     return ListView(
       reverse: true,
       dragStartBehavior: DragStartBehavior.start,

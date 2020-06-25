@@ -13,9 +13,11 @@ class AppState with ChangeNotifier {
     notifyListeners();
   }
 
-  void addRecord(String text) {
-    _recordList.insert(0, new Record(text, DateTime.now()));
-//    _recordList.add(new Record(text, DateTime.now()));
+  void addRecord(String text, {DateTime time}) {
+    if (time == null) {
+      time = DateTime.now();
+    }
+    _recordList.insert(0, new Record(text, time));
     notifyListeners();
   }
 
@@ -24,5 +26,14 @@ class AppState with ChangeNotifier {
     notifyListeners();
   }
 
-  List<Record> get getRecordList => _recordList;
+  void modifyRecord(String originId, Record newRecord) {
+    deleteRecord(originId);
+    addRecord(newRecord.text, time: newRecord.time);
+    notifyListeners();
+  }
+
+  List<Record> getRecordList() {
+    _recordList.sort((a, b) => -(a.time.compareTo(b.time)));
+    return _recordList;
+  }
 }
