@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:lifetracker/data/app_state.dart';
+import 'package:lifetracker/src/data/app_state.dart';
 import 'package:provider/provider.dart';
 
 class TextInputForm extends StatefulWidget {

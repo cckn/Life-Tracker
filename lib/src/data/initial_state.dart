@@ -1,4 +1,4 @@
-import 'package:lifetracker/models/record.dart';
+import 'package:lifetracker/src/models/record.dart';
 
 String shortString = "Text";
 String longString =

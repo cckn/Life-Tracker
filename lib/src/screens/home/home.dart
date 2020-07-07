@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:lifetracker/data/app_state.dart';
-import 'package:lifetracker/screens/home/record_list.dart';
-import 'package:lifetracker/screens/home/text_input_form.dart';
+import 'package:lifetracker/src/data/app_state.dart';
+import 'package:lifetracker/src/screens/home/record_list.dart';
+import 'package:lifetracker/src/screens/home/text_input_form.dart';
 import 'package:provider/provider.dart';
 
 class Home extends StatefulWidget {

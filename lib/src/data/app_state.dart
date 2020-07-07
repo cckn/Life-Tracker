@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:lifetracker/data/initial_state.dart';
-import 'package:lifetracker/models/record.dart';
+import 'package:lifetracker/src/models/record.dart';
+import 'initial_state.dart';
 
 class AppState with ChangeNotifier {
   AppState();

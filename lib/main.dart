@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:lifetracker/data/app_state.dart';
-import 'package:lifetracker/screens/home/home.dart';
+import 'package:lifetracker/src/data/app_state.dart';
+import 'package:lifetracker/src/screens/home/home.dart';
 import 'package:provider/provider.dart';
 
 Color mainColor = Colors.blue;
