@@ -4,12 +4,12 @@ import 'package:lifetracker/src/screens/home/record_list.dart';
 import 'package:lifetracker/src/screens/home/text_input_form.dart';
 import 'package:provider/provider.dart';
 
-class Home extends StatefulWidget {
+class HomeMain extends StatefulWidget {
   @override
-  _HomeState createState() => _HomeState();
+  _HomeMainState createState() => _HomeMainState();
 }
 
-class _HomeState extends State<Home> {
+class _HomeMainState extends State<HomeMain> {
   ScrollController scrollController = ScrollController();
 
   @override

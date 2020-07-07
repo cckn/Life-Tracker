@@ -9,6 +9,10 @@ class Record {
   DateTime createdAt;
   //Audio
   //Photo
+  @override
+  String toString() {
+    return "$time $id $text";
+  }
 
   Record(this.text, this.createdAt) {
     this.time = this.createdAt;

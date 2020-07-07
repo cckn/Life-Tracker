@@ -5,8 +5,8 @@ import 'initial_state.dart';
 class AppState with ChangeNotifier {
   AppState();
 
-//  List<Record> _recordList = [];
   List<Record> _recordList = initialRecordList;
+//  List<Record> _recordList1 = [];
 
   void setRecordList(List<Record> newRecordList) {
     _recordList = newRecordList;
