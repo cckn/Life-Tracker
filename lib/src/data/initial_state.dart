@@ -15,7 +15,7 @@ String multilineText = """여러줄 텍스트
 """;
 
 var initialRecordList = <Record>[
-  new Record(shortString, new DateTime.now()),
-  new Record(longString, new DateTime.now()),
+  new Record("시간에 대한 기록은 왼쪽으로 스와이프 하세요", new DateTime.now()),
+  new Record("할 일은 오른쪽으로 스와이프 하세요", new DateTime.now()),
   new Record(multilineText, new DateTime.now())
 ];

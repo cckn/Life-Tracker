@@ -1,13 +1,13 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:lifetracker/src/models/record.dart';
-import 'package:lifetracker/src/screens/home/record_tile.dart';
+import 'package:lifetracker/src/screens/todos/todo_tile.dart';
 
-class RecordList extends StatelessWidget {
+class TodoList extends StatelessWidget {
   final List<Record> records;
   final ScrollController scrollController;
 
-  RecordList({this.records, this.scrollController});
+  TodoList({this.records, this.scrollController});
 
   @override
   Widget build(BuildContext context) {
@@ -16,7 +16,7 @@ class RecordList extends StatelessWidget {
       dragStartBehavior: DragStartBehavior.start,
       controller: scrollController,
       children: records.map((record) {
-        return RecordTile(
+        return TodoTile(
           record: record,
         );
       }).toList(),

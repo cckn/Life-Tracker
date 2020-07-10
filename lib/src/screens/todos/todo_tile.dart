@@ -5,10 +5,10 @@ import 'package:lifetracker/src/data/app_state.dart';
 import 'package:lifetracker/src/models/record.dart';
 import 'package:provider/provider.dart';
 
-class RecordTile extends StatelessWidget {
+class TodoTile extends StatelessWidget {
   final Record record;
 
-  RecordTile({this.record});
+  TodoTile({this.record});
 
   @override
   Widget build(BuildContext context) {
@@ -62,7 +62,7 @@ class RecordTile extends StatelessWidget {
                     child: AutoSizeText(
                       record.text,
                       style: TextStyle(fontSize: 20.0),
-                      maxLines: 1,
+                      maxLines: 2,
                     ),
                   ),
                   Expanded(

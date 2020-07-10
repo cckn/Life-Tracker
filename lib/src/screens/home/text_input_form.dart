@@ -25,11 +25,11 @@ class _TextInputFormState extends State<TextInputForm> {
     void _onSubmit() {
       String text = _textController.text;
       if (text.trim().length != 0) {
-        widget.scrollController.animateTo(
-          widget.scrollController.initialScrollOffset,
-          duration: Duration(seconds: 1),
-          curve: Curves.elasticOut,
-        );
+//        widget.scrollController.animateTo(
+//          widget.scrollController.initialScrollOffset,
+//          duration: Duration(seconds: 1),
+//          curve: Curves.elasticOut,
+//        );
         appState.addRecord(_textController.text);
         _textController.text = "";
       }
